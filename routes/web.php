@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function(){
+// 	echo "123";
+// });
+Route::get('/', 'MyController@readItems');
+Route::post( '/{id?}', 'MyController@processItem' );
+Route::get('/test-ckeditor', 'MyController@ckeditor');
+Route::get('/uploadPhotoCkeditor', 'MyController@uploadPhotoCkeditor')->name('uploadPhotoCkeditor');
