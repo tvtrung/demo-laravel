@@ -25,3 +25,6 @@ Route::prefix('admint')->group(function() {
 	Route::get('infoadmin', 'AdminController@infoadmin');
 });
 Route::get('info','MyController@info');
+Route::get('/',function(){
+	echo "Hello World";
+});
