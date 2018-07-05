@@ -8,7 +8,6 @@
 
 	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 	<script>
-        CKEDITOR.config.filebrowserImageUploadUrl = '{!! route('uploadPhotoCkeditor').'?_token='.csrf_token() !!}';
         CKEDITOR.replace( 'editor1', {
 	        filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
 	        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
