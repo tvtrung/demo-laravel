@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 }
 class adminSeeder extends Seeder{
 	public function run(){
+        DB::table('admins')->delete();
 		DB::table('admins')->insert(
 			['name'=>'Tran Van Trung','user'=>'tvtrung','email'=>'tvtrung1101@gmail.com','password'=>bcrypt('123456'),'level'=>0,'status'=>1]
 		);
@@ -25,13 +26,14 @@ class adminSeeder extends Seeder{
 }
 class userSeeder extends Seeder{
     public function run(){
-        DB::table('users')->insert(
+        DB::table('users')->delete();
+        DB::table('users')->insert([
             ['name'=>'Tran Van Trung','email'=>'tvtrung1101@gmail.com','password'=>bcrypt('123456')],
             ['name'=>'user1','email'=>'user1@gmail.com','password'=>bcrypt('123456')],
             ['name'=>'user2','email'=>'user2@gmail.com','password'=>bcrypt('123456')],
             ['name'=>'user3','email'=>'user3@gmail.com','password'=>bcrypt('123456')],
             ['name'=>'user4','email'=>'user4@gmail.com','password'=>bcrypt('123456')],
             ['name'=>'user5','email'=>'user5@gmail.com','password'=>bcrypt('123456')]
-        );
+        ]);
     }
 }
