@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
+use Session;
 use Auth;
 
 class AdminLoginController extends Controller
@@ -19,15 +21,10 @@ class AdminLoginController extends Controller
 
     public function login(Request $request)
     {
-    	$this->validate($request, [
-    		'email' => 'required|email',
-    		'password' => 'required|min:6'
-    	]);
-
-    	if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+    	if (Auth::guard('admin')->attempt(['user' => $request->username, 'password' => $request->password], $request->remember)) {
     		return redirect()->intended(route('admin.dashboard'));
     	}
-
-    	return redirect()->back()->withInput($request->only('email', 'remember'));
+        Session::flash('message', "Thông tin đăng nhập không đúng");
+    	return redirect()->back()->withInput($request->only('username', 'remember'));
     }
 }

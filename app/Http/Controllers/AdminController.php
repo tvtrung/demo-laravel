@@ -19,8 +19,6 @@ class AdminController extends Controller
     }
     public function index()
     {
-    	var_dump(Auth::user());
-    	echo "<br>";
         return view('admin.success');
     }
     public function infoadmin()
