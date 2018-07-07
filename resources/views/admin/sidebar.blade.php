@@ -4,7 +4,7 @@
             <li class="sidebar-toggler-wrapper hide">
                 <div class="sidebar-toggler"> </div>
             </li>
-            <li class="nav-item start {{areActive(array('admin.dashboard', 'admin.profile', 'admin.alluser'),'active open')}}">
+            <li class="nav-item start {{areActive(array('admin.dashboard'),'active open')}}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Dashboard</span>
