@@ -22,7 +22,6 @@ Route::prefix('admint')->group(function() {
 	Route::post('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 	Route::get('logout', 'AdminController@logout')->name('admin.logout');
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
-	Route::get('infoadmin', 'AdminController@infoadmin');
 });
 Route::get('/',function(){
 	echo "Hello World";
