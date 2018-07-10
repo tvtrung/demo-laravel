@@ -4,11 +4,7 @@
             <li class="sidebar-toggler-wrapper hide">
                 <div class="sidebar-toggler"> </div>
             </li>
-<<<<<<< HEAD
             <li class="nav-item start {{areActive(array('admin.dashboard','admin.profile.index'),'active open')}}">
-=======
-            <li class="nav-item start {{areActive(array('admin.dashboard'),'active open')}}">
->>>>>>> 38dea7c39f27222cd20e640a59bce97a7735c07b
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Dashboard</span>
@@ -32,7 +28,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start {{areActive(array('admin.dashboard','admin.profile.index'),'active open')}}">
+            <li class="nav-item start {{areActive(array('admin.admins.index','admin.admins.create'),'active open')}}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Admins</span>
@@ -40,15 +36,39 @@
                     <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item start {{isActive('admin.dashboard','active open')}}">
+                    <li class="nav-item start {{isActive('admin.admins.index','active open')}}">
                         <a href="{{route('admin.admins.index')}}" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">List</span>
                             <span class="selected"></span>
                         </a>
                     </li>
-                    <li class="nav-item start {{isActive('admin.profile.index','active open')}}">
+                    <li class="nav-item start {{isActive('admin.admins.create','active open')}}">
                         <a href="{{route('admin.admins.create')}}" class="nav-link ">
+                            <i class="icon-bulb"></i>
+                            <span class="title">Create</span>
+                            <span class="badge badge-success">1</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item start {{areActive(array('admin.users.index','admin.users.create'),'active open')}}">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-home"></i>
+                    <span class="title">Users</span>
+                    <span class="selected"></span>
+                    <span class="arrow open"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start {{isActive('admin.users.index','active open')}}">
+                        <a href="{{route('admin.users.index')}}" class="nav-link ">
+                            <i class="icon-bar-chart"></i>
+                            <span class="title">List</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item start {{isActive('admin.users.create','active open')}}">
+                        <a href="{{route('admin.users.create')}}" class="nav-link ">
                             <i class="icon-bulb"></i>
                             <span class="title">Create</span>
                             <span class="badge badge-success">1</span>

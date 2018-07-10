@@ -135,7 +135,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                 <h4 class="modal-title">Thông báo</h4>
             </div>
-            <div class="modal-body"> Cập nhật thành công </div>
+            <div class="modal-body"></div>
             <div class="modal-footer">
                 <button type="button" class="btn dark btn-outline" data-dismiss="modal">Đóng</button>
             </div>
@@ -154,6 +154,7 @@
 					data: $('#form-personal-info').serialize(),
 					success: function(html){
 						$('.admin-name').html(get_user_name);
+                        $('.modal-body').html("Cập nhật thông tin thành công");
                         $('#modal-basic').modal('show');
 					}
 				});
@@ -178,6 +179,7 @@
                     },
                     success: function(html){
                         $('.admin-avatar').attr('src',html);
+                        $('.modal-body').html("Cập nhật hình ảnh thành công");
                         $('#modal-basic').modal('show');
                     }
                 });

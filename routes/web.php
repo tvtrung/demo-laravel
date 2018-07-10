@@ -29,10 +29,16 @@ Route::prefix('admint')->group(function() {
 	Route::post('profile/updatePassword','ProfileController@update_password')->name('admin.profile.update_password');
 
 	//admins
-	Route::get('admins','AdminsController@index')->name('admin.admins.index');
-	Route::get('admins/create','AdminsController@create')->name('admin.admins.create');
-	Route::post('admins/create','AdminsController@createPost')->name('admin.admins.createPost');
-	Route::get('admins/delete/{id}','AdminsController@delete')->name('admin.admins.delete');
+	Route::get('admins','AdminsManagerController@index')->name('admin.admins.index');
+	Route::get('admins/create','AdminsManagerController@create')->name('admin.admins.create');
+	Route::post('admins/create','AdminsManagerController@createPost')->name('admin.admins.createPost');
+	Route::get('admins/delete/{id}','AdminsManagerController@delete')->name('admin.admins.delete');
+
+	//users
+	Route::get('users','UsersController@index')->name('admin.users.index');
+	Route::get('users/create','UsersController@create')->name('admin.users.create');
+	Route::post('users/create','UsersController@createPost')->name('admin.users.createPost');
+	Route::get('users/delete/{id}','UsersController@delete')->name('admin.users.delete');
 });
 Route::get('/',function(){
 	echo "Hello World";
