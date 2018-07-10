@@ -18,6 +18,9 @@ class CreateTableAdmins extends Migration
             $table->string('name');
             $table->string('user')->unique;
             $table->string('email')->unique;
+            $table->string('phone');
+            $table->string('address');
+            $table->string('photo');
             $table->string('password');
             $table->integer('level');
             $table->integer('status');

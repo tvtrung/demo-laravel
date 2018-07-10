@@ -9,7 +9,7 @@
 		for($i = 0; $i < $count; $i++){
 			if(Route($routeName[$i]) == Request::url()){
 				echo $className;
+				break;
 			}
-			break;
 		}
 	}

@@ -20,7 +20,7 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('admin.page.main');
+        return view('admin.page.dashboard.index');
     }
     public function logout(Request $request)
     {

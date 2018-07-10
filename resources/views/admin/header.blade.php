@@ -17,13 +17,13 @@
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle" src="/admin/assets/layouts/layout/img/avatar3_small.jpg" />
-                        <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
+                        <img alt="" class="img-circle admin-avatar" src="/uploads/admin/{{Auth::user()->photo}}" />
+                        <span class="username username-hide-on-mobile"> <span class="admin-name">{{Auth::user()->name}}</span> </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="page_user_profile_1.html">
+                            <a href="{{route('admin.profile.index')}}">
                                 <i class="icon-user"></i> My Profile </a>
                         </li>
                         <li class="divider"></li>
