@@ -13,3 +13,6 @@
 			}
 		}
 	}
+	function setActive($path, $className) {
+	    return Request::is($path . '*') ? $className : '';
+	}

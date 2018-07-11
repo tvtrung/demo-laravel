@@ -31,8 +31,11 @@ Route::prefix('admint')->group(function() {
 	//admins
 	Route::get('admins','AdminsManagerController@index')->name('admin.admins.index');
 	Route::get('admins/create','AdminsManagerController@create')->name('admin.admins.create');
-	Route::post('admins/create','AdminsManagerController@createPost')->name('admin.admins.createPost');
-	Route::get('admins/delete/{id}','AdminsManagerController@delete')->name('admin.admins.delete');
+	Route::post('admins/create','AdminsManagerController@store')->name('admin.admins.store');
+	Route::get('admins/delete/{id}','AdminsManagerController@destroy')->name('admin.admins.delete');
+	Route::get('admins/view/{id}','AdminsManagerController@view')->name('admin.admins.view');
+	Route::get('admins/edit/{id}','AdminsManagerController@edit')->name('admin.admins.edit');
+	Route::post('admins/edit/{id}','AdminsManagerController@update')->name('admin.admins.update');
 
 	//users
 	Route::get('users','UsersController@index')->name('admin.users.index');

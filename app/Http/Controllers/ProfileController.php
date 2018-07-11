@@ -15,6 +15,7 @@ class ProfileController extends Controller
 {
     public function __construct(){
     	$this->middleware('auth:admin');
+        $this->middleware('admin.status');
     }
     public function index(){
     	return view('admin.page.profile.index');
@@ -51,7 +52,9 @@ class ProfileController extends Controller
         $idUser = Auth::user()->id;
         $dir = 'uploads/admin/';
         if($request->hasFile('avatar')){
-            File::delete(public_path($dir . Auth::user()->photo));
+            if(Auth::user()->photo != 'default.png'){
+                File::delete(public_path($dir . Auth::user()->photo));
+            }
             $file = $request->file('avatar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             if (!File::exists($dir)) {

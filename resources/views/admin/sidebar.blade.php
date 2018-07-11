@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start {{areActive(array('admin.admins.index','admin.admins.create'),'active open')}}">
+            <li class="nav-item start {{areActive(array('admin.admins.index','admin.admins.create'),'active open')}} {{ setActive('admint/admins*', 'active open') }}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Admins</span>
@@ -52,7 +52,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start {{areActive(array('admin.users.index','admin.users.create'),'active open')}}">
+            {{-- <li class="nav-item start {{areActive(array('admin.users.index','admin.users.create'),'active open')}}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Users</span>
@@ -75,7 +75,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>
