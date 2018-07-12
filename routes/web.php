@@ -38,11 +38,20 @@ Route::prefix('admint')->group(function() {
 	Route::post('admins/edit/{id}','AdminsManagerController@update')->name('admin.admins.update');
 
 	//users
-	Route::get('users','UsersController@index')->name('admin.users.index');
-	Route::get('users/create','UsersController@create')->name('admin.users.create');
-	Route::post('users/create','UsersController@createPost')->name('admin.users.createPost');
-	Route::get('users/delete/{id}','UsersController@delete')->name('admin.users.delete');
+	Route::get('users','UsersManagerController@index')->name('admin.users.index');
+	Route::get('users/create','UsersManagerController@create')->name('admin.users.create');
+	Route::post('users/create','UsersManagerController@store')->name('admin.users.store');
+	Route::get('users/delete/{id}','UsersManagerController@destroy')->name('admin.users.delete');
+	Route::get('users/view/{id}','UsersManagerController@view')->name('admin.users.view');
+	Route::get('users/edit/{id}','UsersManagerController@edit')->name('admin.users.edit');
+	Route::post('users/edit/{id}','UsersManagerController@update')->name('admin.users.update');
+
+	//configs
+	Route::get('configs/infomation','ConfigsController@infomation')->name('admin.configs.info');
+	Route::post('configs/infomation','ConfigsController@update')->name('admin.configs.update');
 });
+
+
 Route::get('/',function(){
 	echo "Hello World";
 });

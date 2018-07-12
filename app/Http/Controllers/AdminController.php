@@ -11,6 +11,8 @@ use App\UserCdnPackage;
 use App\Http\Requests\AdminEditUserRequest;
 use App\Transaction_history;
 
+use Illuminate\Support\Facades\DB;
+
 class AdminController extends Controller
 {
     public function __construct()
@@ -20,7 +22,10 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('admin.page.dashboard.index');
+        $data = [
+            'count_users'=>DB::table('users')->count()
+        ];
+        return view('admin.page.dashboard.index',['data'=>$data]);
     }
     public function logout(Request $request)
     {

@@ -32,16 +32,16 @@
                         </div>
                         <div class="details">
                             <div class="number">
-                                <span data-counter="counterup" data-value="1349">0</span>
+                                <span data-counter="counterup" data-value="1349">{{$data['count_users']}}</span>
                             </div>
-                            <div class="desc"> New Feedbacks </div>
+                            <div class="desc"> Thành viên </div>
                         </div>
-                        <a class="more" href="javascript:;"> View more
+                        <a class="more" href="{{route('admin.users.index')}}"> View more
                             <i class="m-icon-swapright m-icon-white"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                {{-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat red">
                         <div class="visual">
                             <i class="fa fa-bar-chart-o"></i>
@@ -86,7 +86,7 @@
                             <i class="m-icon-swapright m-icon-white"></i>
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- END CONTENT BODY -->
