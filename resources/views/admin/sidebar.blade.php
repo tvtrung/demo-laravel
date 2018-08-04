@@ -27,7 +27,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start {{areActive(array('admin.admins.index','admin.admins.create'),'active open')}} {{ setActive('admint/admins*', 'active open') }}">
+            <li class="nav-item start {{areActive(array('admin.admins.index','admin.admins.create'),'active open')}} {{ setActive('*/admins*', 'active open') }}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-users"></i>
                     <span class="title">Admins</span>
@@ -50,7 +50,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start {{areActive(array('admin.users.index','admin.users.create'),'active open')}} {{ setActive('admint/users*', 'active open') }}">
+            <li class="nav-item start {{areActive(array('admin.users.index','admin.users.create'),'active open')}} {{ setActive('*/users*', 'active open') }}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-users"></i>
                     <span class="title">Users</span>
@@ -73,7 +73,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item start {{areActive(array('admin.configs.info'),'active open')}}">
+            <li class="nav-item start {{areActive(array('admin.configs.info','admin.configs.basic'),'active open')}}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-cog"></i>
                     <span class="title">Configs</span>
@@ -88,18 +88,60 @@
                             <span class="selected"></span>
                         </a>
                     </li>
-                    {{-- <li class="nav-item start">
-                        <a href="{{route('admin.users.create')}}" class="nav-link ">
+                    <li class="nav-item start {{isActive('admin.configs.basic','active open')}}">
+                        <a href="{{route('admin.configs.basic')}}" class="nav-link ">
                             <i class="fa fa-list"></i>
                             <span class="title">Basic</span>
                         </a>
                     </li>
-                    <li class="nav-item start">
-                        <a href="{{route('admin.users.create')}}" class="nav-link ">
+                </ul>
+            </li>
+            <li class="nav-item start {{ setActive('*/images*', 'active open') }}">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-file-image-o"></i>
+                    <span class="title">Images</span>
+                    <span class="selected"></span>
+                    <span class="arrow open"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start {{ setActive('*/images/slider*', 'active open') }}">
+                        <a href="{{route('admin.images.index',['type'=>'slider'])}}" class="nav-link ">
                             <i class="fa fa-list"></i>
-                            <span class="title">Advance</span>
+                            <span class="title">Slider</span>
+                            <span class="selected"></span>
                         </a>
-                    </li> --}}
+                    </li>
+                    <li class="nav-item start {{ setActive('*/images/partner*', 'active open') }}">
+                        <a href="{{route('admin.images.index',['type'=>'partner'])}}" class="nav-link ">
+                            <i class="fa fa-list"></i>
+                            <span class="title">Partner</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item start {{ setActive('*/news*', 'active open') }}">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-pencil-square-o"></i>
+                    <span class="title">News</span>
+                    <span class="selected"></span>
+                    <span class="arrow open"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start {{ setActive('*/news/cat*', 'active open') }}">
+                        <a href="{{route('admin.news.cat.index')}}" class="nav-link ">
+                            <i class="fa fa-list"></i>
+                            <span class="title">Categories</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item start {{ setActive('*/news/post*', 'active open') }}">
+                        <a href="{{route('admin.news.post.index')}}" class="nav-link ">
+                            <i class="fa fa-list"></i>
+                            <span class="title">All News</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

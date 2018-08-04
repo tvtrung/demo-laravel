@@ -9,59 +9,24 @@
                     <i class="fa fa-circle"></i>
                 </li>
                 <li>
-                    <span>Infomation</span>
+                    <span>Basic</span>
                 </li>
             </ul>
         </div>
-        <h3 class="page-title">Infomation</h3>
+        <h3 class="page-title">Basic</h3>
         <form action="" method="post" enctype="multipart/form-data" id="submit-form-configs">
 	        <div class="row">
 	        	<div class="col-md-12">
 	        		<div class="portlet light bordered">
                          <div class="portlet-body form">
-                         	<div class="form-group">
-                            	<label>Logo</label><div class="clearfix"></div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail" style="height: 150px;">
-                                        <img src="/uploads/configs/@if($row['logo'] != ''){{$row['logo']}}@else{{'default.png'}}@endif" alt="" /> </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-                                    <div>
-                                        <span class="btn default btn-file">
-                                            <span class="fileinput-new"> Select image </span>
-                                            <span class="fileinput-exists"> Change </span>
-                                            <input type="file" name="logo"> 
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
                     		<div class="form-group">
-                                <label>Hotline</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <input type="text" class="form-control" name="hotline" value="{{$row['hotline']}}"> 
-                                </div>
+                                <label>Google Map</label>
+                                <textarea class="form-control" name="googlemap" rows="5">{{$row['googlemap']}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <input type="text" class="form-control" name="email" value="{{$row['email']}}"> 
-                                </div>
+                                <label>Google Analytics</label>
+                                <textarea class="form-control" name="googleanalytics" rows="5">{{$row['googleanalytics']}}</textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Contact</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <input type="text" class="form-control" name="contact" value="{{$row['contact']}}"> 
-                                </div>
-                            </div>
-                            
                             <div class="form-actions right">
                                 <button type="reset" class="btn default">Cancel</button>
                                 <button type="submit" class="btn green">Submit</button>

@@ -48,9 +48,43 @@ Route::prefix('admint')->group(function() {
 
 	//configs
 	Route::get('configs/infomation','ConfigsController@infomation')->name('admin.configs.info');
-	Route::post('configs/infomation','ConfigsController@update')->name('admin.configs.update');
-});
+	Route::get('configs/basic','ConfigsController@basic')->name('admin.configs.basic');
+	Route::post('configs/update','ConfigsController@update')->name('admin.configs.update');
 
+	//images
+	Route::get('images/{type}','ImagesController@index')->name('admin.images.index');
+	Route::get('images/update_status_ajax/{id}','ImagesController@update_status_ajax')->name('admin.images.update_status_ajax');
+	Route::get('images/view/{id}','ImagesController@view')->name('admin.images.view');
+	Route::get('images/{type}/delete/{id}','ImagesController@destroy')->name('admin.images.delete');
+	Route::get('images/{type}/create','ImagesController@create')->name('admin.images.create');
+	Route::post('images/{type}/create','ImagesController@store')->name('admin.images.store');
+	Route::get('images/{type}/edit/{id}','ImagesController@edit')->name('admin.images.edit');
+	Route::post('images/{type}/edit/{id}','ImagesController@update')->name('admin.images.update');
+	Route::get('images/update_order_ajax/{id}','ImagesController@update_order_ajax')->name('admin.images.update_order_ajax');
+
+	//categories post
+	Route::get('news/cat','CatNewsController@index')->name('admin.news.cat.index');
+	Route::get('news/cat/view/{id}','CatNewsController@view')->name('admin.news.cat.view');
+	Route::get('news/cat/create','CatNewsController@create')->name('admin.news.cat.create');
+	Route::post('news/cat/create','CatNewsController@store')->name('admin.news.cat.store');
+	Route::get('news/cat/edit/{id}','CatNewsController@edit')->name('admin.news.cat.edit');
+	Route::post('news/cat/edit/{id}','CatNewsController@update')->name('admin.news.cat.update');
+	Route::get('news/cat/delete/{id}','CatNewsController@destroy')->name('admin.news.cat.delete');
+	Route::get('news/cat/update_status_ajax/{id}','CatNewsController@update_status_ajax')->name('admin.news.cat.update_status_ajax');
+	Route::get('news/cat/update_order_ajax/{id}','CatNewsController@update_order_ajax')->name('admin.news.cat.update_order_ajax');
+
+	//news
+	Route::get('news/post','NewsController@index')->name('admin.news.post.index');
+	Route::get('news/post/view/{id}','NewsController@view')->name('admin.news.post.view');
+	Route::get('news/post/create','NewsController@create')->name('admin.news.post.create');
+	Route::post('news/post/create','NewsController@store')->name('admin.news.post.store');
+	Route::get('news/post/edit','NewsController@edit')->name('admin.news.post.edit');
+	Route::post('news/post/edit','NewsController@update')->name('admin.news.post.update');
+	Route::get('news/post/delete/{id}','NewsController@destroy')->name('admin.news.post.delete');
+	Route::get('news/post/update_status_ajax/{id}','NewsController@update_status_ajax')->name('admin.news.post.update_status_ajax');
+	Route::get('news/post/update_order_ajax/{id}','NewsController@update_order_ajax')->name('admin.news.post.update_order_ajax');
+
+});
 
 Route::get('/',function(){
 	echo "Hello World";
